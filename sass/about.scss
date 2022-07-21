@@ -1,0 +1,427 @@
+@import "./base/reset";
+@import "./base/base";
+@import './base/vars';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap');
+
+.header {
+	background-image: url(.././assets/images/heading-bg.jpg);
+
+	&__container {
+		@include flex();
+		padding: 1rem 10%;
+	}
+
+	&__logo {
+		font-weight: 700;
+		font-size: 1.75rem;
+
+		i {
+			color: $green;
+		}
+		&:hover {
+			color: $green;
+			i {
+				color: $black;
+			}
+		}
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: center;
+		font-size: 1.5rem;
+		gap: 2.5rem;
+	}
+
+	&__navbar {
+		display: flex;
+		gap: 1.5rem;
+		position: relative;
+		#close-btn{
+         position: absolute;
+         top:1.5rem; right:2rem;
+         font-size: 4rem;
+         cursor: pointer;
+         color:$black;
+         display: none;
+
+         &:hover{
+            transform: rotate(90deg);
+         }
+      }
+	}
+
+	&__navbar-link {
+		&:hover {
+			color: $green;
+		}
+	}
+
+	#account-btn {
+		&:hover {
+			color: $green;
+			cursor: pointer;
+		}
+	}
+	#menu-btn{
+      display: none;
+   }
+}
+
+.account-form {
+	position: fixed;
+   top:0; right:-150%;
+   width: 25rem;
+   background: $white;
+   display: flex;
+   flex-direction: column;
+   gap:2rem;
+   justify-content: center;
+   height: 100%;
+   z-index: 1000;
+   padding:2rem;
+   text-align: center;
+
+	&.active{
+      right: 0;
+      box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+   }
+
+	#close-form{
+      position: absolute;
+      top:1.5rem; right:2.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      color:$black;
+
+      &:hover{
+         transform: rotate(90deg);
+      }
+   }
+
+	form{
+      border:$border;
+      padding:2rem;
+      display: none;
+
+      &.active{
+         display: block;
+      }
+
+      h3{
+        
+         padding-bottom: .5rem;
+         text-transform: uppercase;
+      }
+
+      .box{
+         width: 100%;
+         padding:1.2rem 1.4rem;
+         border:$border;
+         font-size: 1.6rem;
+         margin:.7rem 0;
+      }
+
+		input {
+			display: inline-block;
+   		padding:0.5rem 2rem;
+   		font-size: 1rem;
+   		border:0.1rem solid #0eb582;
+   		background: #f0fdfa;
+   		color:#0eb582;
+			margin-top: 1rem;
+		}
+
+      .row{
+         padding:1rem 0;
+         display: flex;
+         align-items: center;
+         gap:.5rem;
+
+         label{
+            @include text(1rem);
+				text-transform: lowercase;
+         }
+
+#remember-me {
+	margin-top: 0.5rem;
+	
+}
+
+         a{
+            font-size: 1rem;
+            color:$brown;
+            text-transform: lowercase;
+				margin-left: auto;
+            
+            &:hover{
+               text-decoration: underline;
+               color:$green;
+            }
+         }
+      }
+
+      .btn{
+         width: 100%;
+      }
+   }
+
+	&__login {
+		margin:0 .5rem;
+
+      &.active{
+         background: $green;
+         color:$white;
+      }
+	}
+
+	&__register {
+		margin:0 .5rem;
+
+      &.active{
+         background: $green;
+         color:$white;
+      }
+	}
+}
+
+.about {
+
+	&__container {
+		@include flex();
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	&__img {
+		flex:1 1 20rem;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	&__content {
+		flex:1 1 40rem;
+		text-align: center;
+	}
+
+	&__content-title {
+		margin-bottom: 1rem;
+	}
+
+	&__content-text {
+		@include text(1rem);
+	}
+
+	&__content-icons {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	&__content-item {
+		text-align: center;
+      border:$border;
+      background-color: $light-green;
+		padding:1rem 2rem;
+		width: 12rem;
+		
+	}
+}
+
+.content-item {
+
+	&__img {
+		margin: 0 auto;
+	}
+
+	&__title {
+		padding-top: 0.5rem;
+		font-size: 1.5rem;
+	}
+
+	&__text {
+		padding-top: 0.5rem;
+	}
+}
+
+.teachers {
+
+	&__slide {
+		text-align: center;
+		&:hover{
+
+         .teachers__content{
+            img{
+               background: $green;
+            }
+
+            .teachers__content-links{
+               bottom: 0;
+            }
+         }
+		}
+	}
+
+	&__content {
+		position: relative;
+         overflow: hidden;
+	}
+
+	&__content-img {
+		background: $light-green;
+            width: 100%;
+	}
+
+	&__content-links {
+				position: absolute;
+            bottom: -5rem; left:0; right:0;
+            background: rgba(0,0,0,.8);
+            padding:1rem;
+				a{
+               font-size: 1.5rem;
+               margin:0 1rem;
+               color:$white;
+
+               &:hover{
+                  color:$green;
+               }
+            }
+	}
+
+	&__name {
+		@include flex();
+		padding-top: 1rem;
+	}
+
+}
+
+.footer {
+	background-color: $light-green;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	&__item-datetime {
+		@include text(1.25rem);
+			padding-left: 1rem;	
+	}
+
+	&__item-logo {
+		padding: 1rem;
+		font-size: 1.75rem;
+		i {
+			color: $green;
+		}
+		&:hover {
+			color: $green;
+			i {
+				color: $black;
+			}
+		}
+	}
+
+	&__item-title {
+		padding: 1rem;
+		font-size: 1.5rem;
+	}
+
+	&__item-icons {
+		padding: 1rem;
+		a {
+			height: 3rem;
+               width: 3rem;
+               line-height: 3rem;
+               font-size: 1.7rem;
+               background-color: $green;
+               color:$white;
+               margin-right: 0.5rem;
+               text-align: center;
+
+               &:hover{
+                  background-color: $black;
+               }
+		}
+	}
+
+	&__item-link {
+		padding: 0.5rem;
+		display: block;
+		@include text(1rem);
+
+            &:hover{
+               color:$green;
+               
+            }
+	}
+
+	&__item-text {
+		padding: 1rem;
+		width: 20rem;
+		@include text(1rem);
+	}
+
+	&__item-email {
+		display: inline-block;
+   padding:0.5rem 2rem;
+   font-size: 1rem;
+   border:0.1rem solid #0eb582;
+   background: #f0fdfa;
+   color:#0eb582;
+   
+	margin: 1rem;
+	}
+
+	&__item-button {
+		margin: 1rem;
+	}
+}
+
+@media (max-width:768px){
+
+   .header{
+
+      #menu-btn{
+         display:block;
+      }
+
+      &__navbar{
+         position: fixed;
+         top:0; right:-100%;
+         width: 100%;
+         background: $white;
+         height: 100%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+			background-color: $light-green;
+			
+         z-index: 1000;
+
+         #close-btn{
+            display: block;
+         }
+
+         &.active{
+            box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+            right: 0;
+         }
+
+		}
+		&__navbar-link {
+			margin: 0 auto;
+			font-size: 4rem;
+			&:hover {
+				color: $green;
+			}
+		}
+	}     
+
+}
