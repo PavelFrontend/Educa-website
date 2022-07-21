@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+ul, ol {
+  list-style: none; }
+
+img {
+  max-width: 100%;
+  display: block; }
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none; }
+
+input:focus,
+button:focus {
+  outline: none; }
+
+button,
+input[type="submit"] {
+  background: none;
+  cursor: pointer; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+* {
+  transition: all 0.75s; }
+
+html::-webkit-scrollbar {
+  width: 0.6rem; }
+html::-webkit-scrollbar-track {
+  background: transparent; }
+html::-webkit-scrollbar-thumb {
+  background: #0eb582; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: capitalize; }
+
+.container {
+  padding: 2.5rem 10%; }
+
+.title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  color: #444; }
+
+.button {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  border: 0.1rem solid #0eb582;
+  background: #f0fdfa;
+  color: #0eb582;
+  cursor: pointer;
+  text-transform: capitalize; }
+  .button:hover {
+    background: #0eb582;
+    color: #fff; }
+
+.header {
+  background-image: url(.././assets/images/heading-bg.jpg); }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10%; }
+  .header__logo {
+    font-weight: 700;
+    font-size: 1.75rem; }
+    .header__logo i {
+      color: #0eb582; }
+    .header__logo:hover {
+      color: #0eb582; }
+      .header__logo:hover i {
+        color: #444; }
+  .header__menu {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    gap: 2.5rem; }
+  .header__navbar {
+    display: flex;
+    gap: 1.5rem;
+    position: relative; }
+    .header__navbar #close-btn {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      font-size: 4rem;
+      cursor: pointer;
+      color: #444;
+      display: none; }
+      .header__navbar #close-btn:hover {
+        transform: rotate(90deg); }
+  .header__navbar-link:hover {
+    color: #0eb582; }
+  .header #account-btn:hover {
+    color: #0eb582;
+    cursor: pointer; }
+  .header #menu-btn {
+    display: none; }
+
+.account-form {
+  position: fixed;
+  top: 0;
+  right: -150%;
+  width: 25rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  height: 100%;
+  z-index: 1000;
+  padding: 2rem;
+  text-align: center; }
+  .account-form.active {
+    right: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8); }
+  .account-form #close-form {
+    position: absolute;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #444; }
+    .account-form #close-form:hover {
+      transform: rotate(90deg); }
+  .account-form form {
+    border: 0.1rem solid #0eb582;
+    padding: 2rem;
+    display: none; }
+    .account-form form.active {
+      display: block; }
+    .account-form form h3 {
+      padding-bottom: .5rem;
+      text-transform: uppercase; }
+    .account-form form .box {
+      width: 100%;
+      padding: 1.2rem 1.4rem;
+      border: 0.1rem solid #0eb582;
+      font-size: 1.6rem;
+      margin: .7rem 0; }
+    .account-form form input {
+      display: inline-block;
+      padding: 0.5rem 2rem;
+      font-size: 1rem;
+      border: 0.1rem solid #0eb582;
+      background: #f0fdfa;
+      color: #0eb582;
+      margin-top: 1rem; }
+    .account-form form .row {
+      padding: 1rem 0;
+      display: flex;
+      align-items: center;
+      gap: .5rem; }
+      .account-form form .row label {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #777;
+        text-transform: lowercase; }
+      .account-form form .row #remember-me {
+        margin-top: 0.5rem; }
+      .account-form form .row a {
+        font-size: 1rem;
+        color: #777;
+        text-transform: lowercase;
+        margin-left: auto; }
+        .account-form form .row a:hover {
+          text-decoration: underline;
+          color: #0eb582; }
+    .account-form form .btn {
+      width: 100%; }
+  .account-form__login {
+    margin: 0 .5rem; }
+    .account-form__login.active {
+      background: #0eb582;
+      color: #fff; }
+  .account-form__register {
+    margin: 0 .5rem; }
+    .account-form__register.active {
+      background: #0eb582;
+      color: #fff; }
+
+.home__container {
+  padding: 0 0 2.5rem; }
+.home__swiper {
+  max-width: 100%; }
+.home__slide {
+  display: flex;
+  align-items: center;
+  height: 42.75rem;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 0 10%; }
+
+.slide__content {
+  width: 35rem; }
+.slide__content-title {
+  font-size: 2.5rem;
+  color: #fff; }
+.slide__content-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #777;
+  color: #eee;
+  margin-top: 1rem; }
+.slide__content-link {
+  margin-top: 2rem; }
+
+.swiper-pagination-bullet-active {
+  background: #0eb582; }
+
+.subjects__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem; }
+.subjects__item {
+  text-align: center;
+  border: 0.1rem solid #0eb582;
+  background-color: #f0fdfa;
+  padding: 2rem 1.5rem; }
+  .subjects__item:hover {
+    background: #0eb582;
+    cursor: pointer; }
+    .subjects__item:hover h3 {
+      color: #fff; }
+    .subjects__item:hover p {
+      color: #eee; }
+.subjects__item-title {
+  padding-top: 0.5rem; }
+.subjects__item-text {
+  padding-top: 0.5rem; }
+
+.home-courses__slide {
+  text-align: center;
+  position: relative;
+  background-color: #f0fdfa;
+  overflow: hidden; }
+  .home-courses__slide:hover .home-courses__slide-hover {
+    bottom: 0; }
+.home-courses__slide-content {
+  padding: 2rem; }
+.home-courses__slide-img {
+  width: 100%;
+  margin-bottom: 1.5rem; }
+.home-courses__slide-hover {
+  position: absolute;
+  bottom: -100%;
+  right: 0;
+  left: 0;
+  background: #0eb582;
+  padding: 2rem 3rem;
+  color: #fff; }
+
+.slide-hover__content {
+  padding-top: 1rem; }
+.slide-hover__link {
+  margin-top: 1rem; }
+  .slide-hover__link:hover {
+    background-color: #444; }
+
+.footer {
+  background-color: #f0fdfa; }
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; }
+  .footer__item-datetime {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: #777;
+    padding-left: 1rem; }
+  .footer__item-logo {
+    padding: 1rem;
+    font-size: 1.75rem; }
+    .footer__item-logo i {
+      color: #0eb582; }
+    .footer__item-logo:hover {
+      color: #0eb582; }
+      .footer__item-logo:hover i {
+        color: #444; }
+  .footer__item-title {
+    padding: 1rem;
+    font-size: 1.5rem; }
+  .footer__item-icons {
+    padding: 1rem; }
+    .footer__item-icons a {
+      height: 3rem;
+      width: 3rem;
+      line-height: 3rem;
+      font-size: 1.7rem;
+      background-color: #0eb582;
+      color: #fff;
+      margin-right: 0.5rem;
+      text-align: center; }
+      .footer__item-icons a:hover {
+        background-color: #444; }
+  .footer__item-link {
+    padding: 0.5rem;
+    display: block;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #777; }
+    .footer__item-link:hover {
+      color: #0eb582; }
+  .footer__item-text {
+    padding: 1rem;
+    width: 20rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #777; }
+  .footer__item-email {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border: 0.1rem solid #0eb582;
+    background: #f0fdfa;
+    color: #0eb582;
+    margin: 1rem; }
+  .footer__item-button {
+    margin: 1rem; }
+
+@media (max-width: 768px) {
+  .header #menu-btn {
+    display: block; }
+  .header__navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f0fdfa;
+    z-index: 1000; }
+    .header__navbar #close-btn {
+      display: block; }
+    .header__navbar.active {
+      box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+      right: 0; }
+  .header__navbar-link {
+    margin: 0 auto;
+    font-size: 4rem; }
+    .header__navbar-link:hover {
+      color: #0eb582; } }
+
+/*# sourceMappingURL=home.css.map */

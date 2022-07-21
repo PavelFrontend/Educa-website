@@ -1,0 +1,25 @@
+$green:#0eb582;
+$brown:#777;
+$black:#444;
+$light-green:#f0fdfa;
+$light-white:#eee;
+$white:#fff;
+$border: 0.1rem solid $green;
+
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin grid($value) {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax($value, 1fr));
+   gap:2rem;
+}
+
+@mixin text($value) {
+   font-size: $value;
+   line-height: 1.5;
+   color:$brown;
+}
